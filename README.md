@@ -11,6 +11,11 @@ The core philosophy is a **Hybrid Rule + RL Design**. The RL agent is never allo
 - **Realistic Overheads**: Simulates the time and energy cost of Preemption (task switching) and Mode-Switches (LO to HI transitions).
 - **Hard Safety Mask**: Guarantees that HI tasks never miss deadlines by filtering out unsafe actions before the RL agent is consulted.
 - **Rich Visualizations**: Generates exact Gantt charts (task execution, energy traces) and RL training plots.
+- 
+## 💡 Motivation
+Why use Reinforcement Learning (RL) instead of traditional deterministic schedulers?
+1. **System Overheads**: Simulating the exact time and energy cost of preemption (task switching) and mode switches (LO to HI) makes traditional fixed-priority scheduling sub-optimal. RL learns when it is worth paying the overhead to switch tasks.
+2. **Dynamic Energy Harvesting**: Because the harvested energy varies over time (e.g., random or sinusoidal profiles), a static rule-based policy cannot adapt. The RL agent learns to make optimal decisions based on the current battery level and future energy availability.
 
 ## 🧠 Architecture & Safety Design
 ### Why a Hard Mask instead of Reward Penalties?
